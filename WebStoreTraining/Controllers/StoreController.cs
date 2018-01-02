@@ -12,13 +12,19 @@ namespace WebStoreTraining.Controllers
         // GET: Store
         public ActionResult Index()
         {
-            return View();
+            var category = new List<Category>
+            {
+                new Category {Name = "Electronics"},
+                new Category {Name = "Furniture"},
+                new Category {Name = "Accessories"}
+            };
+            return View(category);
         }
 
-        public string Browse(string category)
+        public ActionResult Browse(string category)
         {
-            string message = HttpUtility.HtmlEncode("showing category " + category);
-            return message;
+            var categoryModel = new Category {Name = category};
+            return View(categoryModel);
         }
 
         public ActionResult Details(int id)
