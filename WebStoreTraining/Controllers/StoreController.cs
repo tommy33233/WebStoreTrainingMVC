@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using WebStoreTraining.Models;
 
@@ -9,7 +6,6 @@ namespace WebStoreTraining.Controllers
 {
     public class StoreController : Controller
     {
-        // GET: Store
         public ActionResult Index()
         {
             var category = new List<Category>
@@ -29,7 +25,7 @@ namespace WebStoreTraining.Controllers
 
         public ActionResult Details(int id)
         {
-            var item = new Items {Title = = "Item" + id};
+            var item = new Items {Title = "Item" + id};
             return View();
         }
     }
